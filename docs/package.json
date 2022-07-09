@@ -1,0 +1,28 @@
+{
+  "name": "docs",
+  "type": "module",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server && mv dist/server/entry-server.js dist/server/entry-server.cjs",
+    "generate": "vite build --outDir dist && yarn build:server && node prerender"
+  },
+  "dependencies": {
+    "goober": "^2.1.10",
+    "preact": "^10.5.15",
+    "preact-iso": "^2.3.0",
+    "preact-render-to-string": "^5.2.0"
+  },
+  "devDependencies": {
+    "@contentlayer/core": "^0.2.5",
+    "@contentlayer/utils": "^0.2.5",
+    "@preact/preset-vite": "^2.1.5",
+    "contentlayer": "^0.2.5",
+    "rxjs": "^7.5.5",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9"
+  }
+}
